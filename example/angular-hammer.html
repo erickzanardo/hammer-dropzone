@@ -1,0 +1,41 @@
+<html ng-app="zombieApp">
+    <head>
+        <title>Hammer angular Example</title>
+        <style type="text/css">
+            
+            body {
+                font-family: arial;
+                padding: 15px;
+            }
+            
+            .selectedWeapons, .avaiableWeapons {
+                height: 100px;
+                border: 1px solid #000;
+                padding: 5px;
+            }
+            
+            .weapon-img {
+                border: 1px solid #000;
+                max-width: 80px;
+            }
+        </style>
+        <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="hammer.js"></script>
+        <script type="text/javascript" src="angular.min.js"></script>
+        <script type="text/javascript" src="controller.js"></script>
+        <script type="text/javascript" src="../hammer-dropzone.js"></script>
+        <script type="text/javascript" src="../angular-hammer-dropzone.js"></script>
+        <script type="text/javascript" src="jquery-ui.min.js"></script>
+    </head>
+    <body ng-controller="WeaponsController">
+        <h2>Choose your weapons for the zombie apocalypse</h2>
+        <p>Avaiable weapons</p>
+        <div class="avaiableWeapons">
+            <img src="{{weapon}}" ng-repeat="weapon in avaiableWeapons" class="weapon-img" drop-on-zone=".selectedWeapons, onDropSelected"></img>
+        </div>
+        <p>Selected weapons</p>
+        <div class="selectedWeapons">
+            <img src="{{weapon}}" ng-repeat="weapon in selectedWeapons" class="weapon-img" drop-on-zone=".avaiableWeapons, onDropAvaiable"></img>
+        </div>
+    </body>
+</html>
