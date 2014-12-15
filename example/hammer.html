@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Hammer Example</title>
+        <style type="text/css">
+
+            
+            body {
+                padding: 20;
+                font-family: arial;
+            }
+            
+            .hammer-obj {
+                width: 100px;
+            }
+            
+            .drop-zone {
+                height: 250px;
+                text-align: center;
+                margin-top: 50px;
+            }
+            
+            .drop-zone-1 {
+                background: url(dance_pattern_1.jpg);
+            }
+
+            .drop-zone-2 {
+                background: url(dance_pattern_2.jpg);
+            }
+        </style>
+        <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="hammer.js"></script>
+        <script type="text/javascript" src="../hammer-dropzone.js"></script>
+        <script type="text/javascript" src="jquery-ui.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var element = document.getElementById("hammer-obj");
+                $('#hammer-obj').hammerDropZone('.drop-zone', function(cloneObj, dropZone) {
+                    dropZone.effect('shake');
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Drop MC Hammer on one of the dance floors</h1>
+        <img src="hammer.gif" class="hammer-obj" id="hammer-obj">
+        <div class="drop-zone drop-zone-1">
+        </div>
+        <div class="drop-zone drop-zone-2">
+        </div>
+    </body>
+</html>
